@@ -65,6 +65,7 @@ body {
   align-content: center;
   justify-content: center;
   min-height: 100vh;
+  padding-bottom: var(--default-padding);
   background: url(../assets/back.jpg) var(--color-very-dark-blue);
   background-size: 40rem;
   background-blend-mode: difference;
