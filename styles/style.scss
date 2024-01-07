@@ -19,7 +19,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  border: solid 0.1rem red;
+  // border: solid 0.1rem red;
 }
 
 *,
@@ -60,6 +60,7 @@ body {
 .container {
   display: grid;
   grid-template-columns: repeat(4, 20rem);
+  gap: var(--default-padding);
   background: url(../assets/back.jpg) var(--color-very-dark-blue);
   background-size: 40rem;
   min-height: 100vh;
@@ -69,15 +70,38 @@ body {
     width: 100%;
     height: 100%;
     position: fixed;
-    backdrop-filter: blur(0.2rem);
+    backdrop-filter: blur(0.35rem);
   }
 }
 .card {
   z-index: 1;
+  background-color: var(--color-dark-blue);
 }
 .personal-pic {
   width: 10rem;
   height: 10rem;
   border-radius: 50%;
   border: 0.2rem solid var(--color-white);
+}
+.bottom {
+  display: flex;
+  flex-direction: column;
+  gap: var(--default-gap) pa;
+}
+.row {
+  display: flex;
+  flex: 1;
+  gap: var(--default-gap);
+  align-items: center;
+}
+.icons {
+  display: flex;
+  gap: var(--default-gap);
+}
+.icon {
+  width: 2rem;
+  height: 2rem;
+}
+.username {
+  font-weight: 300;
 }
