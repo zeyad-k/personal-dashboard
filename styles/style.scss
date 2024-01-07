@@ -1,3 +1,4 @@
+@import "./mixins";
 /* variables */
 :root {
   --color-very-dark-blue: #0f1424;
@@ -69,6 +70,17 @@ body {
   background: url(../assets/back.jpg) var(--color-very-dark-blue);
   background-size: 40rem;
   background-blend-mode: difference;
+  // responsive
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include mobile {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  @include mobile-tablet {
+    align-content: start;
+  }
+
   &::before {
     content: "";
     width: 100%;
@@ -87,14 +99,31 @@ body {
 
   &:not(:nth-child(1)) {
     padding: var(--default-padding);
+    @include mobile-tablet {
+      margin: 0 var(--default-padding);
+    }
   }
 
   &:nth-child(1) {
     grid-row: 1/3;
+
+    @include tablet {
+      grid-column: 1/3;
+      flex-direction: row;
+    }
+    @include mobile-tablet {
+      border-radius: 0;
+    }
   }
   & .top {
     background-color: var(--color-desaturated-blue);
     padding: var(--default-padding);
+    @include mobile-tablet {
+      display: flex;
+      align-items: center;
+      flex: 1;
+      gap: 1rem;
+    }
     & .name {
       font-size: 2.6rem;
       font-weight: 300;
@@ -114,6 +143,14 @@ body {
   gap: var(--default-gap);
   padding: var(--default-padding);
   margin: auto 0;
+  @include tablet {
+    flex: 1;
+  }
+
+  @include mobile {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 }
 .row {
   display: flex;
